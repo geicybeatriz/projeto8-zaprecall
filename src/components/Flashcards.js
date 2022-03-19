@@ -1,3 +1,5 @@
+
+
 export default function Flashcards(props){
     const {question, answer} = props
 
@@ -8,7 +10,7 @@ export default function Flashcards(props){
                     <h3>{question}</h3>
                 </div>
                 <div>
-                    <img className="turn-card" src="./assets/img/vector.png" onClick="turnCard()" alt="turn card"/>
+                    <img className="flip-card" src="./assets/img/vector.png" onClick="turnCard()" alt="flip card"/>
                 </div>
             </div>
             <div className="face open-answer hidden">

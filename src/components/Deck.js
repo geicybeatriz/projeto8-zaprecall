@@ -1,8 +1,6 @@
 import React from "react";
 import Flashcards from "./Flashcards";
 
-
-
 const dataQuestions = [
     {number: 1, question:"O que é JSX?", answer:"Uma extensão de linguagem do JavaScript"},
     {number: 2, question:"O React é __", answer:"uma biblioteca JavaScript para construção de interfaces"},
@@ -14,6 +12,9 @@ const dataQuestions = [
     {number: 8, question:"Usamos estado (state) para __", answer:"dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"}
 ];
 
+
+
+
 export default function Deck(props){
     const [selected, setSelected] = React.useState(false);
     const {number} =props;
@@ -22,15 +23,21 @@ export default function Deck(props){
     
     return !selected ? (
         <>
-            <article className="">
+            <article className="deck-flashcards">
                 <h2>Pergunta {number}</h2>
                 <ion-icon name="play-outline" onClick={() => setSelected(true)} ></ion-icon>
             </article>
-            
+            <article className="card hidden">
+                    {dataQuestions.map((data) => (<Flashcards key={data.number} question={data.question} answer={data.answer}/>))}
+            </article>
         </>
     ): (
         <>
-            <article className="open-card">
+            <article className="deck-flashcards hidden">
+                <h2>Pergunta {number}</h2>
+                <ion-icon name="play-outline" onClick={() => setSelected(true)} ></ion-icon>
+            </article>
+            <article className="card ">
                     {dataQuestions.map((data) => (<Flashcards key={data.number} question={data.question} answer={data.answer}/>))}
             </article>
         </>

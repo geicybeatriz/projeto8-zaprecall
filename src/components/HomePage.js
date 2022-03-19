@@ -7,7 +7,7 @@ export default function HomePage(){
     return !start ? (
         <main className="home-page">
             <article>
-                <img className="logo-home" src="./assets/img/logo-telainicial.jpg" alt="ZapRecall"/>
+                <img className="logo-home" src="./assets/img/image 1.png" alt="ZapRecall"/>
                 <h1>ZapRecall</h1>
             </article>
             <button onClick={() => setStart(true)}>Iniciar Recall</button>

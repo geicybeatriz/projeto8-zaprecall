@@ -8,11 +8,11 @@ export default function Tela2(){
         <>
             <div className="content-T2">
                 <header>
-                    <img className="logo-top" src="./assets/img/logo-flashcards.png" alt="ZapRecall logo"/>
+                    <img className="logo-top" src="./assets/img/image 1.png" alt="ZapRecall logo"/>
                     <h1>ZapRecall</h1>
                 </header>
 
-                <main className="deck-flashcards">
+                <main className="container-questions">
                     {nQuestions.map((n) => (<Deck key={n} number={n}/>))}
                 </main>
 
