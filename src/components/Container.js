@@ -1,6 +1,8 @@
 import React from "react";
+import Header from "./Header";
 import Deck from "./Deck";
 import Footer from "./Footer";
+
 
 const dataQuestions = [
     {question:"O que é JSX?", answer:"Uma extensão de linguagem do JavaScript"},
@@ -21,10 +23,7 @@ export default function Container(props){
     return(
         <>
             <div className="content-T2">
-                <header>
-                    <img className="logo-top" src="./assets/img/image 1.png" alt="ZapRecall logo"/>
-                    <h1>ZapRecall</h1>
-                </header>
+                <Header />
 
                 <main className="container-questions">
                     {dataQuestions.map((data, index) => 

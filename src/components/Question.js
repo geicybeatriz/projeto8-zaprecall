@@ -7,9 +7,7 @@ export default function Question(props){
         <>
             <article className="card ">
                 <div className="open-question">
-                    <div className="text">
-                        <h3>{question}</h3>
-                    </div>
+                    <h3>{question}</h3>
                     <div className="arrow-flip-card">
                         <img 
                             className="flip-card" 

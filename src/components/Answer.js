@@ -13,9 +13,7 @@ export default function Answer(props){
         <> 
             <article className="card">
                 <div className="open-answer">
-                    <div className="text">
-                        <h3>{answer}</h3>
-                    </div>
+                    <h3>{answer}</h3>
                     <div className="buttons">
                         <button className="red" onClick={() => finishAnswer('start',"close-circle")}>Não lembrei</button>
                         <button className="yellow" onClick={() => finishAnswer('start',"help-circle")}>Quase não lembrei</button>
