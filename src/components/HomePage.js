@@ -14,7 +14,7 @@ export default function HomePage(){
         </main>
     ) : (
         <>
-            <Container />
+            <Container setStart={setStart}/>
         </>
     );
 }

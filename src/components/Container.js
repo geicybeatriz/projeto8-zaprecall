@@ -13,7 +13,8 @@ const dataQuestions = [
     {question:"Usamos estado (state) para __", answer:"dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"}
 ];
 
-export default function Container(){
+export default function Container(props){
+    const {setStart} = props;
     dataQuestions.sort(() => Math.random() - 0.5);
     const [result, setResult] = React.useState([]);
     
@@ -35,7 +36,7 @@ export default function Container(){
                             result={result}/>))}
                 </main>
 
-                <Footer result={result} total={dataQuestions.length} />
+                <Footer setStart={setStart} result={result} total={dataQuestions.length} />
             </div>
         </>
     )

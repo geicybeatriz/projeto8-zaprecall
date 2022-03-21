@@ -2,7 +2,7 @@ import Success from "./Success";
 import Failure from "./Failure";
 
 export default function Footer(props){
-    const {result, total} = props;
+    const {result, total, setStart} = props;
           
     return (
         <>
@@ -16,6 +16,10 @@ export default function Footer(props){
                 <p> {result.length}/{total} CONCLUÍDOS </p>
                 <article className="icons-footer">
                     {result.map((icon, index)=> (<ion-icon  key={index} name={`${icon}`} ></ion-icon>))}
+                </article>
+
+                <article>
+                {result.length === total ? (<button className="restart-button" onClick={()=> setStart(false)} >REINICIAR RECALL</button>): <></>}
                 </article>
             </footer>
         </>
