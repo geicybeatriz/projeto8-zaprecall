@@ -254,8 +254,8 @@ article .restart-button{
 }
 
 .flip-card{
-    width: 30px;
-    height: 20px;
+    width: 25px;
+    height: 15px;
 }
 
 .red{
@@ -318,9 +318,12 @@ article .restart-button{
 }
 
 @media (min-width: 614px){
-    .deck-flashcards, .card{
+    .deck-flashcards {
         width: 567.12px;
         height: 90px;
+    }
+    .card{
+        width: 567.12px;
     }
     
 } 
