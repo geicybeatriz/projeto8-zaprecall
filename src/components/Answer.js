@@ -1,12 +1,12 @@
 import React from "react";
 
 export default function Answer(props){
-    const {answer,setResponse, setSelected, setResult} = props;
+    const {answer,setResponse, setSelected, result, setResult} = props;
 
     function finishAnswer(selected, name){
         setSelected(selected);
         setResponse(name);
-        setResult(name);
+        setResult([...result, name]);
     }
 
     return (

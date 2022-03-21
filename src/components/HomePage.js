@@ -1,5 +1,5 @@
 import React from "react";
-import Tela2 from "./Tela2";
+import Container from "./Container";
 
 export default function HomePage(){
     const [start, setStart ] = React.useState(false);
@@ -14,7 +14,7 @@ export default function HomePage(){
         </main>
     ) : (
         <>
-            <Tela2 />
+            <Container />
         </>
     );
 }

@@ -103,7 +103,7 @@
 }
 
 .content-T2 footer{
-    height: 50px;
+    min-height: 50px;
 
     background-color: #FFFFFF;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
@@ -276,4 +276,11 @@ ion-icon[name="help-circle"], .help-circle{
 }
 ion-icon[name="checkmark-circle"], .checkmark-circle{
     color:#2FBE34;
+}
+
+.icons-footer{
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

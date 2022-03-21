@@ -13,10 +13,10 @@ const dataQuestions = [
     {question:"Usamos estado (state) para __", answer:"dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"}
 ];
 
-export default function Tela2(){
+export default function Container(){
     dataQuestions.sort(() => Math.random() - 0.5);
-    const [result, setResult] = React.useState('');
-
+    const [result, setResult] = React.useState([]);
+    
     return(
         <>
             <div className="content-T2">
@@ -31,10 +31,11 @@ export default function Tela2(){
                             key={index} 
                             id={index} 
                             data={data} 
-                            setResult={setResult}/>))}
+                            setResult={setResult}
+                            result={result}/>))}
                 </main>
 
-                <Footer result={result}/>
+                <Footer result={result} total={dataQuestions.length} />
             </div>
         </>
     )
