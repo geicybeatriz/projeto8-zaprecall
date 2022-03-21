@@ -1,5 +1,7 @@
-import Deck from "./Deck"
-import Footer from "./Footer"
+import React from "react";
+import Deck from "./Deck";
+import Footer from "./Footer";
+
 const dataQuestions = [
     {question:"O que é JSX?", answer:"Uma extensão de linguagem do JavaScript"},
     {question:"O React é __", answer:"uma biblioteca JavaScript para construção de interfaces"},
@@ -12,11 +14,8 @@ const dataQuestions = [
 ];
 
 export default function Tela2(){
-    dataQuestions.sort(comparator);
-
-    function comparator(){
-        return Math.random() - 0.5;
-    }
+    dataQuestions.sort(() => Math.random() - 0.5);
+    const [result, setResult] = React.useState('');
 
     return(
         <>
@@ -27,12 +26,16 @@ export default function Tela2(){
                 </header>
 
                 <main className="container-questions">
-                    {dataQuestions.map((data, index) => (<Deck key={data} id={index} data={data}/>))}
+                    {dataQuestions.map((data, index) => 
+                        (<Deck 
+                            key={index} 
+                            id={index} 
+                            data={data} 
+                            setResult={setResult}/>))}
                 </main>
 
-                <Footer />
+                <Footer result={result}/>
             </div>
         </>
     )
 }
-

@@ -1,23 +1,19 @@
 import React from "react";
-import Flashcards from "./Flashcards";
+import Answer from "./Answer";
+import Cards from "./Cards";
+import Question from "./Question";
+
 
 export default function Deck(props){
-    const [selected, setSelected] = React.useState(false);
-    const {key, question, answer} =props.data;   
-    
-    return !selected ? (
+    const [selected, setSelected] = React.useState('start');
+    const [response, setResponse] = React.useState('');
+    const {key, id, data:{question, answer}, setResult} =props;   
+
+    return (
         <>
-            <article className="deck-flashcards">
-                <h2>Pergunta {props.id+1} </h2>
-                <ion-icon name="play-outline" onClick={() => setSelected(true)} ></ion-icon>
-            </article>
-        </>
-    ) : (
-        <>
-            
-            <article className="card ">
-                <Flashcards key={key} question={question} answer={answer}/>
-            </article>
+            {(selected === 'start') ? <Cards index={id} setSelected={setSelected} response={response} /> :
+            (selected === 'question') ? <Question key={key} question={question} setSelected={setSelected}/> :
+            <Answer answer={answer} setResponse={setResponse} setResult={setResult} setSelected={setSelected}/>}
         </>
     );
 }
